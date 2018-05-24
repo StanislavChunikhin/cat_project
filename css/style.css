@@ -204,6 +204,7 @@ h1 {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #f2f2f2;
+  color: #666666;
   width: 274px;
   height: 38px;
   border-top: 4px solid #1698d9;
@@ -215,7 +216,6 @@ h1 {
   font-family: 'Trebuchet MS';
   margin: 14px 0 0 6px;
   font-size: 16px;
-  color: #666666;
 }
 
 .card-body {
@@ -252,7 +252,6 @@ h1 {
 
 
 .card-body h2 {
-  color: black;
   font-size: 48px;
   margin: 2px 0 0 43px;
 }
@@ -291,9 +290,7 @@ h1 {
         -ms-flex-pack: center;
             justify-content: center;
 }
-.card-body .weight {
 
-}
 
 .card-body .weight p {
   color: white;
@@ -330,6 +327,7 @@ h1 {
 }
 .buy p {
   margin: 0;
+  display: none;
 }
 .buy a {
   text-decoration: none;
@@ -343,7 +341,7 @@ h1 {
   border-right: 4px solid #d91667;
 }
 
-.background-color-selected {
+.background-weight-color-selected {
   background-color: #d91667;
 }
 .head-border-color-selected {
@@ -383,4 +381,72 @@ h1 {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+}
+
+.buy .display {
+  display: block;
+}
+
+.card-body-disabled {
+    background-image: url('../img/cat_transparent.png');
+    border-left: 4px solid #b3b3b3;
+    border-bottom: 4px solid #b3b3b3;
+    border-right: 4px solid #b3b3b3;
+    color: #b3b3b3;
+  }
+}
+
+
+.corner-disabled {
+  width: 0px;
+  height: 0px;
+  border-bottom: 19px solid #f2f2f2;
+  border-right: 19px solid #f2f2f2;
+  border-left: 19px solid transparent;
+  border-top: 19px solid transparent;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.corner-disabled::before {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  content: '';
+  display: table;
+  position: relative;
+  width: 59px;
+  height: 0px;
+  border-top: 4px solid #b3b3b3;
+  top: -3px;
+  left: -30px;
+}
+
+.color-disabled {
+  border-top-color:  #b3b3b3;
+  border-right-color: #b3b3b3;
+  color: #b3b3b3;
+}
+
+.background-weight-color-disabled {
+  background-color: #b3b3b3;
+}
+
+.buy p:nth-child(3) {
+  text-shadow: 0px 1px 1px black;
+  color: #ffff66;
+}
+
+.default:hover .card-body,
+.default:hover .card-corner::before,
+.default:hover .card-head {
+  border-color: #2ea8e6;
+}
+
+.default:hover .weight {
+  background-color: #2ea8e6;
+}
+
+.buy a:hover {
+  color: #2ea8e6;
 }
