@@ -334,6 +334,9 @@ h1 {
   color: #1698d9;
   border-bottom: 1px dashed #1698d9;
 }
+.card-head p {
+  display: none;
+}
 
 .border-color-selected {
   border-left: 4px solid #d91667;
@@ -349,9 +352,6 @@ h1 {
   border-right: 4px solid #d91667;
 }
 
-.corner {
-    border-top: 4px solid #d91667;
-}
 
 .corner-selected {
   width: 0px;
@@ -383,7 +383,8 @@ h1 {
   flex-direction: column;
 }
 
-.buy .display {
+.buy .display,
+.card-head .display {
   display: block;
 }
 
@@ -449,4 +450,47 @@ h1 {
 
 .buy a:hover {
   color: #2ea8e6;
+}
+
+.border-color-selected-hover {
+  border-left: 4px solid #e62e7a;
+  border-bottom: 4px solid #e62e7a;
+  border-right: 4px solid #e62e7a;
+}
+
+.background-weight-color-selected-hover {
+  background-color: #e62e7a;
+}
+.head-border-color-selected-hover {
+  border-top: 4px solid #e62e7a;
+  border-right: 4px solid #e62e7a;
+}
+
+
+.corner-selected-hover {
+  width: 0px;
+  height: 0px;
+  border-bottom: 19px solid #f2f2f2;
+  border-right: 19px solid #f2f2f2;
+  border-left: 19px solid transparent;
+  border-top: 19px solid transparent;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+.corner-selected-hover::before {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  content: '';
+  display: table;
+  position: relative;
+  width: 59px;
+  height: 0px;
+  border-top: 4px solid #e62e7a;
+  top: -3px;
+  left: -30px;
+}
+
+.pink-font {
+  color: #e62e7a;
 }
