@@ -10,45 +10,34 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 var cards = document.querySelectorAll(".card");
 
 cards.forEach(function(cardDiv) {
-
   var card = cardDiv.querySelector(".filling");
   var link = cardDiv.querySelector('.buy p:nth-child(1) a');
 
-  link.addEventListener("click", function(event) {
+  var switchStateFunction = function(event) {
     event.preventDefault();
-    card.classList.remove('default');
-    card.classList.add('selected');
-  });
-
-  if (card.classList.contains('selected')) {
-    card.addEventListener("mouseenter", function() {
-      card.classList.add('hover');
-    });
-    card.addEventListener("mouseleave", function() {
-      card.classList.remove('hover');
-    });
-  }
-
-  card.addEventListener("click", function(event) {
+    card.classList.remove('hover');
     if (card.classList.contains('default')) {
       card.classList.remove('default');
-      card.classList.add('selected');
-      card.addEventListener("mouseenter", function() {
-        card.classList.add('hover');
-      });
-      card.addEventListener("mouseleave", function() {
-        card.classList.remove('hover');
-      });
-
-    } else if (card.classList.contains('selected')) {
-      card.classList.remove('selected');
-      card.classList.add('disabled');
-
-
-
-    } else if (card.classList.contains('disabled')) {
       card.classList.remove('disabled');
+      card.classList.add('selected');
+    } else if (card.classList.contains('selected')) {
+      card.classList.remove('default');
+      card.classList.add('disabled');
+      card.classList.remove('selected');
+    } else {
       card.classList.add('default');
+      card.classList.remove('disabled');
+      card.classList.remove('selected');
     }
+  }
+
+  card.addEventListener("click", switchStateFunction);
+  link.addEventListener("click", switchStateFunction);
+
+  card.addEventListener("mouseenter", function() {
+    card.classList.add('hover');
+  });
+  card.addEventListener("mouseleave", function() {
+    card.classList.remove('hover');
   });
 });
