@@ -18,16 +18,10 @@ cards.forEach(function(cardDiv) {
     card.classList.remove('hover');
     if (card.classList.contains('default')) {
       card.classList.remove('default');
-      card.classList.remove('disabled');
       card.classList.add('selected');
     } else if (card.classList.contains('selected')) {
-      card.classList.remove('default');
-      card.classList.add('disabled');
       card.classList.remove('selected');
-    } else {
       card.classList.add('default');
-      card.classList.remove('disabled');
-      card.classList.remove('selected');
     }
   }
 
