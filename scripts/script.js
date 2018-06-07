@@ -7,7 +7,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
-var cards = document.querySelectorAll(".card");
+/*var cards = document.querySelectorAll(".card");
 
 cards.forEach(function(cardDiv) {
   var card = cardDiv.querySelector(".filling");
@@ -34,4 +34,4 @@ cards.forEach(function(cardDiv) {
   card.addEventListener("mouseleave", function() {
     card.classList.remove('hover');
   });
-});
+});*/
