@@ -7,6 +7,8 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
+var Stas = document.querySelector(".stas");
+
 /*var cards = document.querySelectorAll(".card");
 
 cards.forEach(function(cardDiv) {
